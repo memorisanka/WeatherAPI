@@ -12,7 +12,8 @@ def index():
     form = EntryForm()
     if form.validate_on_submit():
         localization = form.localization.data
-        url = f'http://api.weatherapi.com/v1/current.json?key=542f7d3a3b87476f8a7160752222110&q={localization}'
+        localization_format = localization.replace(" ", "_")
+        url = f'http://api.weatherapi.com/v1/current.json?key=542f7d3a3b87476f8a7160752222110&q={localization_format}'
         response = urllib.request.urlopen(url)
         data = json.loads(response.read())
         return render_template('data.html', data=data)
