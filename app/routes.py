@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, redirect
+from flask import Blueprint, render_template
+import urllib.request, json
 from .forms import EntryForm
 
 
@@ -11,7 +12,10 @@ def index():
     form = EntryForm()
     if form.validate_on_submit():
         localization = form.localization.data
-        return render_template('data.html', localization=localization)
+        url = f'http://api.weatherapi.com/v1/current.json?key=542f7d3a3b87476f8a7160752222110&q={localization}'
+        response = urllib.request.urlopen(url)
+        data = json.loads(response.read())
+        return render_template('data.html', data=data)
     return render_template('entry.html', title='Welcome', form=form)
 
 
