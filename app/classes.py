@@ -1,6 +1,7 @@
 import datetime
 import json
 import requests
+import os
 import urllib.request
 from http import HTTPStatus
 
@@ -9,9 +10,16 @@ class FileMixin:
     def __init__(self):
         self.file_name = "weather_forecast"
 
+    @staticmethod
+    def check() -> None:
+        """Check if file exists."""
+
+        if not os.path.isdir(os.getcwd() + "/files"):
+            os.mkdir(os.getcwd() + "/files")
+
     def write_json(self, data: object) -> None:
         """Write data to json."""
-
+        self.check()
         with open(f"files/{self.file_name}.json", "a") as f:
             json.dump(data, f, indent=6)
 
@@ -35,7 +43,7 @@ class ConnectionMixin:
 
     def build_url(self) -> str:
         localization_format = self.localization.replace(" ", "_")
-        request_url = f'{self.url}{self.api_key}{localization_format}'
+        request_url = f'{self.url}{self.api_key}&q={localization_format}'
         return request_url
 
     def connect_to_api(self) -> bool:
@@ -48,11 +56,15 @@ class ConnectionMixin:
 
     def get_data_to_dict(self) -> dict:
         url = self.build_url()
-        get_data = urllib.request.urlopen(url)
-        return get_data
+        with urllib.request.urlopen(url) as url:
+            data = json.loads(url.read())
+        return data
 
 
 class WeatherForecast:
     def __init__(self):
         self.forecast = {}
-        self.data = datetime.datetime.now()
+        self.time_stamp = datetime.datetime.now()
+
+    def __str__(self):
+        return True
