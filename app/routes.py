@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
-import urllib.request, json
+import json
 from .forms import EntryForm
+import urllib.request
 
 
 index_blueprint = Blueprint("index", __name__)
