@@ -1,4 +1,4 @@
-import datetime
+from datetime import date
 import json
 import requests
 import os
@@ -7,8 +7,8 @@ from http import HTTPStatus
 
 
 class FileMixin:
-    def __init__(self):
-        self.file_name = "weather_forecast"
+    def __init__(self, file_name):
+        self.file_name = file_name
 
     @staticmethod
     def check() -> None:
@@ -20,7 +20,7 @@ class FileMixin:
     def write_json(self, data: object) -> None:
         """Write data to json."""
         self.check()
-        with open(f"files/{self.file_name}.json", "a") as f:
+        with open(f"files/{self.file_name}.json", "w") as f:
             json.dump(data, f, indent=6)
 
     def read_json(self) -> None:
@@ -54,17 +54,29 @@ class ConnectionMixin:
             return True
         return False
 
+    @staticmethod
+    def set_data():
+        today = date.today()
+        time_stamp = today.strftime("%d/%m/%Y")
+        return time_stamp
+
     def get_data_to_dict(self) -> dict:
         url = self.build_url()
         with urllib.request.urlopen(url) as url:
             data = json.loads(url.read())
+            time_stamp = self.set_data()
+            data['time_stamp'] = time_stamp
         return data
 
 
 class WeatherForecast:
     def __init__(self):
         self.forecast = {}
-        self.time_stamp = datetime.datetime.now()
+        self.date = date.today()
 
-    def __str__(self):
-        return True
+    def get_from_file(self):
+        FileMixin.read_json(self)
+
+    def set_date(self):
+        time_stamp = self.date.strftime("%d/%m/%Y")
+        return time_stamp

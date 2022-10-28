@@ -1,0 +1,32 @@
+{
+      "location": {
+            "name": "London",
+            "region": "City of London, Greater London",
+            "country": "United Kingdom",
+            "lat": 51.52,
+            "lon": -0.11,
+            "tz_id": "Europe/London",
+            "localtime_epoch": 1666963130,
+            "localtime": "2022-10-28 14:18"
+      },
+      "current": {
+            "last_updated_epoch": 1666962900,
+            "last_updated": "2022-10-28 14:15",
+            "temp_c": 19.0,
+            "is_day": 1,
+            "condition": {
+                  "text": "Partly cloudy"
+            },
+            "wind_kph": 20.2,
+            "wind_dir": "WSW",
+            "pressure_mb": 1015.0,
+            "precip_mm": 0.0,
+            "precip_in": 0.0,
+            "humidity": 64,
+            "cloud": 75,
+            "feelslike_c": 19.0,
+            "vis_km": 10.0,
+            "uv": 5.0,
+            "gust_mph": 11.9
+      }
+}

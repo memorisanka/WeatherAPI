@@ -16,7 +16,7 @@ def index():
         connection = conn.connect_to_api()
         if connection:
             data = conn.get_data_to_dict()
-            fm = FileMixin()
+            fm = FileMixin(localization)
             fm.write_json(data)
             return render_template('data.html', data=data)
     return render_template('entry.html', title='WeatherAPI', form=form)

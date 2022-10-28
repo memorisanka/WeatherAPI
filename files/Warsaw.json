@@ -1,0 +1,33 @@
+{
+      "location": {
+            "name": "Warsaw",
+            "region": "",
+            "country": "Poland",
+            "lat": 52.25,
+            "lon": 21.0,
+            "tz_id": "Europe/Warsaw",
+            "localtime_epoch": 1666964786,
+            "localtime": "2022-10-28 15:46"
+      },
+      "current": {
+            "last_updated_epoch": 1666964700,
+            "last_updated": "2022-10-28 15:45",
+            "temp_c": 19.0,
+            "is_day": 1,
+            "condition": {
+                  "text": "Sunny"
+            },
+            "wind_kph": 9.0,
+            "wind_dir": "SSW",
+            "pressure_mb": 1023.0,
+            "precip_mm": 0.0,
+            "precip_in": 0.0,
+            "humidity": 68,
+            "cloud": 0,
+            "feelslike_c": 19.0,
+            "vis_km": 10.0,
+            "uv": 5.0,
+            "gust_mph": 9.2
+      },
+      "time_stamp": "28/10/2022"
+}
