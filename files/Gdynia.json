@@ -1,33 +1,33 @@
 {
       "location": {
-            "name": "Warsaw",
+            "name": "Gdynia",
             "region": "",
             "country": "Poland",
-            "lat": 52.25,
-            "lon": 21.0,
+            "lat": 54.5,
+            "lon": 18.55,
             "tz_id": "Europe/Warsaw",
-            "localtime_epoch": 1667067673,
-            "localtime": "2022-10-29 20:21"
+            "localtime_epoch": 1667067736,
+            "localtime": "2022-10-29 20:22"
       },
       "current": {
             "last_updated_epoch": 1667067300,
             "last_updated": "2022-10-29 20:15",
-            "temp_c": 13.0,
+            "temp_c": 11.0,
             "is_day": 0,
             "condition": {
                   "text": "Clear"
             },
-            "wind_kph": 9.0,
+            "wind_kph": 24.1,
             "wind_dir": "W",
-            "pressure_mb": 1019.0,
+            "pressure_mb": 1018.0,
             "precip_mm": 0.0,
             "precip_in": 0.0,
-            "humidity": 94,
+            "humidity": 76,
             "cloud": 0,
-            "feelslike_c": 11.6,
+            "feelslike_c": 8.1,
             "vis_km": 10.0,
             "uv": 1.0,
-            "gust_mph": 13.9
+            "gust_mph": 25.7
       },
       "time_stamp": "29/10/2022"
 }

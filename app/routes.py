@@ -19,9 +19,10 @@ def index():
             fm = FileMixin(localization)
             fm.write_json(data)
             return redirect(url_for('data.show_data'))
-    return render_template('entry.html', title='WeatherAPI', form=form)
+    return render_template('entry.html', form=form)
 
 
 @data_blueprint.route('/data', methods=["POST", "GET"])
 def show_data():
+    
     return render_template('data.html')

@@ -1,33 +1,33 @@
 {
       "location": {
-            "name": "Warsaw",
+            "name": "Wroclaw",
             "region": "",
             "country": "Poland",
-            "lat": 52.25,
-            "lon": 21.0,
+            "lat": 51.1,
+            "lon": 17.03,
             "tz_id": "Europe/Warsaw",
-            "localtime_epoch": 1667067673,
-            "localtime": "2022-10-29 20:21"
+            "localtime_epoch": 1667064695,
+            "localtime": "2022-10-29 19:31"
       },
       "current": {
-            "last_updated_epoch": 1667067300,
-            "last_updated": "2022-10-29 20:15",
-            "temp_c": 13.0,
+            "last_updated_epoch": 1667064600,
+            "last_updated": "2022-10-29 19:30",
+            "temp_c": 14.0,
             "is_day": 0,
             "condition": {
                   "text": "Clear"
             },
-            "wind_kph": 9.0,
-            "wind_dir": "W",
-            "pressure_mb": 1019.0,
+            "wind_kph": 6.1,
+            "wind_dir": "SSW",
+            "pressure_mb": 1021.0,
             "precip_mm": 0.0,
             "precip_in": 0.0,
             "humidity": 94,
             "cloud": 0,
-            "feelslike_c": 11.6,
+            "feelslike_c": 13.7,
             "vis_km": 10.0,
             "uv": 1.0,
-            "gust_mph": 13.9
+            "gust_mph": 10.3
       },
       "time_stamp": "29/10/2022"
 }
