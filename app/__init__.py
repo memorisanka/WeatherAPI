@@ -7,9 +7,9 @@ def create_app():
 
     app.debug = True
 
-    from .routes import index_blueprint
+    from .routes import index_blueprint, data_blueprint
 
     app.register_blueprint(index_blueprint)
-    # app.register_blueprint(data_blueprint)
+    app.register_blueprint(data_blueprint)
 
     return app
