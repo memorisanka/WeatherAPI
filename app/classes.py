@@ -74,8 +74,12 @@ class WeatherForecast:
         self.forecast = {}
         self.date = date.today()
 
-    def get_from_file(self):
-        FileMixin.read_json(self)
+    def check_date(self, forecast):
+        time_stamp = self.set_date()
+        self.forecast = forecast
+        if time_stamp == forecast['time_stamp']:
+            return True
+        return False
 
     def set_date(self):
         time_stamp = self.date.strftime("%d/%m/%Y")
