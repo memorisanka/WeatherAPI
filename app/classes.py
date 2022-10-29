@@ -84,3 +84,6 @@ class WeatherForecast:
     def set_date(self):
         time_stamp = self.date.strftime("%d/%m/%Y")
         return time_stamp
+
+    def show(self):
+        pass

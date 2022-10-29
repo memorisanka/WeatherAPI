@@ -24,5 +24,4 @@ def index():
 
 @data_blueprint.route('/data', methods=["POST", "GET"])
 def show_data():
-    
     return render_template('data.html')
