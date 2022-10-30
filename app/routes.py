@@ -7,7 +7,7 @@ index_blueprint = Blueprint("index", __name__)
 data_blueprint = Blueprint("data", __name__)
 
 
-@index_blueprint.route('/', methods=["POST", "GET"])
+@index_blueprint.route("/", methods=["POST", "GET"])
 def index():
     form = EntryForm()
     if form.validate_on_submit():
@@ -20,7 +20,8 @@ def index():
             check_date = forecast.check_date(weather_data)
             if check_date:
                 forecast.write_forecast()
-                return render_template('data.html', data="Date OK")
+                show_data = forecast.show()
+                return render_template("data.html", data=show_data)
             else:
                 conn = ConnectionMixin(localization)
                 connection = conn.connect_to_api()
@@ -29,7 +30,8 @@ def index():
                     fm = FileMixin(localization)
                     fm.write_json(data)
                     forecast.write_forecast()
-                    return render_template('data.html', data="Date not OK")
+                    show_data = forecast.show()
+                    return render_template("data.html", data=show_data)
         else:
             conn = ConnectionMixin(localization)
             connection = conn.connect_to_api()
@@ -38,11 +40,12 @@ def index():
                 fm = FileMixin(localization)
                 fm.write_json(data)
                 forecast.write_forecast()
-                return render_template('data.html', data="File does not exist.")
+                show_data = forecast.show()
+                return render_template("data.html", data=show_data)
 
-    return render_template('entry.html', form=form)
+    return render_template("entry.html", form=form)
 
 
-@data_blueprint.route('/data', methods=["POST", "GET"])
+@data_blueprint.route("/data", methods=["POST", "GET"])
 def show_data():
-    return render_template('data.html')
+    return render_template("data.html")

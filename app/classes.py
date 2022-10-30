@@ -18,7 +18,7 @@ class FileMixin:
             os.mkdir(os.getcwd() + "/files")
 
     def check_file(self) -> bool:
-        return os.path.isdir(os.getcwd() + f"/files/{self.file_name}.json")
+        return os.path.exists(os.getcwd() + f"/files/{self.file_name}.json")
 
     def write_json(self, data: object) -> None:
         """Write data to json."""
@@ -41,12 +41,12 @@ class FileMixin:
 class ConnectionMixin:
     def __init__(self, localization) -> None:
         self.localization = localization
-        self.url = f'http://api.weatherapi.com/v1/current.json?'
-        self.api_key = 'key=542f7d3a3b87476f8a7160752222110'
+        self.url = f"http://api.weatherapi.com/v1/current.json?"
+        self.api_key = "key=542f7d3a3b87476f8a7160752222110"
 
     def build_url(self) -> str:
         localization_format = self.localization.replace(" ", "_")
-        request_url = f'{self.url}{self.api_key}&q={localization_format}'
+        request_url = f"{self.url}{self.api_key}&q={localization_format}"
         return request_url
 
     def connect_to_api(self) -> bool:
@@ -68,7 +68,7 @@ class ConnectionMixin:
         with urllib.request.urlopen(url) as url:
             data = json.loads(url.read())
             time_stamp = self.set_data()
-            data['time_stamp'] = time_stamp
+            data["time_stamp"] = time_stamp
         return data
 
 
@@ -81,7 +81,7 @@ class WeatherForecast:
     def check_date(self, forecast) -> bool:
         time_stamp = self.set_date()
         self.forecast = forecast
-        if time_stamp == forecast['time_stamp']:
+        if time_stamp == forecast["time_stamp"]:
             return True
         return False
 
@@ -91,19 +91,18 @@ class WeatherForecast:
 
     def show(self):
         forecast = [
-            ['Localization: ', self.forecast['name']],
-            ['Country: ', self.forecast['country']],
-            ['Date: ', self.forecast['time_stamp']],
-            ['Local time: ', self.forecast['localtime']],
-            ['Temperature: ', self.forecast['temp_c']],
-            ['Wind speed: ', self.forecast['wind_kph']],
-            ['Wind direction: ', self.forecast['wind_dir']],
-            ['Pressure: ', self.forecast['pressure_mb']]
+            ["Localization: ", self.forecast['location']["name"]],
+            ["Country: ", self.forecast['location']["country"]],
+            ["Today is: ", self.forecast["time_stamp"]],
+            ["Local time: ", self.forecast['location']["localtime"]],
+            ["Temperature [oC]: ", self.forecast['current']["temp_c"]],
+            ["Perceived temperature: ", self.forecast['current']["feelslike_c"]],
+            ["Wind speed [km/h]: ", self.forecast['current']["wind_kph"]],
+            ["Wind direction: ", self.forecast['current']["wind_dir"]],
+            ["Pressure [hPa]: ", self.forecast['current']["pressure_mb"]],
         ]
+        return forecast
 
-        for line in forecast:
-            print(line)
-        
     def write_forecast(self):
         with open(f"files/{self.file_name}.json", "r") as f:
             self.forecast = json.load(f)
