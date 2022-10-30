@@ -90,8 +90,20 @@ class WeatherForecast:
         return time_stamp
 
     def show(self):
-        pass
+        forecast = [
+            ['Localization: ', self.forecast['name']],
+            ['Country: ', self.forecast['country']],
+            ['Date: ', self.forecast['time_stamp']],
+            ['Local time: ', self.forecast['localtime']],
+            ['Temperature: ', self.forecast['temp_c']],
+            ['Wind speed: ', self.forecast['wind_kph']],
+            ['Wind direction: ', self.forecast['wind_dir']],
+            ['Pressure: ', self.forecast['pressure_mb']]
+        ]
 
+        for line in forecast:
+            print(line)
+        
     def write_forecast(self):
         with open(f"files/{self.file_name}.json", "r") as f:
             self.forecast = json.load(f)
