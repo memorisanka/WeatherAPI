@@ -11,15 +11,18 @@ class FileMixin:
         self.file_name = file_name
 
     @staticmethod
-    def check() -> None:
+    def check_directory() -> None:
         """Check if file exists."""
 
         if not os.path.isdir(os.getcwd() + "/files"):
             os.mkdir(os.getcwd() + "/files")
 
+    def check_file(self) -> bool:
+        return os.path.isdir(os.getcwd() + f"/files/{self.file_name}.json")
+
     def write_json(self, data: object) -> None:
         """Write data to json."""
-        self.check()
+        self.check_directory()
         with open(f"files/{self.file_name}.json", "w") as f:
             json.dump(data, f, indent=6)
 
@@ -55,7 +58,7 @@ class ConnectionMixin:
         return False
 
     @staticmethod
-    def set_data():
+    def set_data() -> str:
         today = date.today()
         time_stamp = today.strftime("%d/%m/%Y")
         return time_stamp
@@ -70,20 +73,25 @@ class ConnectionMixin:
 
 
 class WeatherForecast:
-    def __init__(self):
+    def __init__(self, file_name) -> None:
         self.forecast = {}
         self.date = date.today()
+        self.file_name = file_name
 
-    def check_date(self, forecast):
+    def check_date(self, forecast) -> bool:
         time_stamp = self.set_date()
         self.forecast = forecast
         if time_stamp == forecast['time_stamp']:
             return True
         return False
 
-    def set_date(self):
+    def set_date(self) -> str:
         time_stamp = self.date.strftime("%d/%m/%Y")
         return time_stamp
 
     def show(self):
         pass
+
+    def write_forecast(self):
+        with open(f"files/{self.file_name}.json", "r") as f:
+            self.forecast = json.load(f)
