@@ -1,0 +1,33 @@
+{
+      "location": {
+            "name": "Ostrow Wielkopolski",
+            "region": "",
+            "country": "Poland",
+            "lat": 51.65,
+            "lon": 17.82,
+            "tz_id": "Europe/Warsaw",
+            "localtime_epoch": 1667155032,
+            "localtime": "2022-10-30 19:37"
+      },
+      "current": {
+            "last_updated_epoch": 1667154600,
+            "last_updated": "2022-10-30 19:30",
+            "temp_c": 15.8,
+            "is_day": 0,
+            "condition": {
+                  "text": "Partly cloudy"
+            },
+            "wind_kph": 6.5,
+            "wind_dir": "WSW",
+            "pressure_mb": 1018.0,
+            "precip_mm": 0.0,
+            "precip_in": 0.0,
+            "humidity": 73,
+            "cloud": 30,
+            "feelslike_c": 15.8,
+            "vis_km": 10.0,
+            "uv": 1.0,
+            "gust_mph": 8.5
+      },
+      "time_stamp": "30/10/2022"
+}

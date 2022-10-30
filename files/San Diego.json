@@ -1,0 +1,33 @@
+{
+      "location": {
+            "name": "San Diego",
+            "region": "California",
+            "country": "United States of America",
+            "lat": 32.72,
+            "lon": -117.16,
+            "tz_id": "America/Los_Angeles",
+            "localtime_epoch": 1667155207,
+            "localtime": "2022-10-30 11:40"
+      },
+      "current": {
+            "last_updated_epoch": 1667154600,
+            "last_updated": "2022-10-30 11:30",
+            "temp_c": 21.7,
+            "is_day": 1,
+            "condition": {
+                  "text": "Partly cloudy"
+            },
+            "wind_kph": 3.6,
+            "wind_dir": "WSW",
+            "pressure_mb": 1016.0,
+            "precip_mm": 0.0,
+            "precip_in": 0.0,
+            "humidity": 49,
+            "cloud": 25,
+            "feelslike_c": 21.7,
+            "vis_km": 16.0,
+            "uv": 6.0,
+            "gust_mph": 3.1
+      },
+      "time_stamp": "30/10/2022"
+}

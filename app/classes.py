@@ -12,16 +12,19 @@ class FileMixin:
 
     @staticmethod
     def check_directory() -> None:
-        """Check if file exists."""
+        """Check if directory exists."""
 
         if not os.path.isdir(os.getcwd() + "/files"):
             os.mkdir(os.getcwd() + "/files")
 
     def check_file(self) -> bool:
+        """Check if file exists."""
+
         return os.path.exists(os.getcwd() + f"/files/{self.file_name}.json")
 
     def write_json(self, data: object) -> None:
         """Write data to json."""
+
         self.check_directory()
         with open(f"files/{self.file_name}.json", "w") as f:
             json.dump(data, f, indent=6)
@@ -45,25 +48,32 @@ class ConnectionMixin:
         self.api_key = "key=542f7d3a3b87476f8a7160752222110"
 
     def build_url(self) -> str:
-        localization_format = self.localization.replace(" ", "_")
-        request_url = f"{self.url}{self.api_key}&q={localization_format}"
+        """Build url after delete white space between words."""
+
+        localization_format: str = self.localization.replace(" ", "_")
+        request_url: str = f"{self.url}{self.api_key}&q={localization_format}"
         return request_url
 
     def connect_to_api(self) -> bool:
+        """Build url and connect to API"""
+
         url: str = self.build_url()
         response = requests.get(url)
-        # TODO CHECK COMPARE STATUS CODES INSTEAD OF STRINGS
         if response.status_code == HTTPStatus.OK:
             return True
         return False
 
     @staticmethod
     def set_data() -> str:
-        today = date.today()
-        time_stamp = today.strftime("%d/%m/%Y")
+        """Set today's date."""
+
+        today: date = date.today()
+        time_stamp: str = today.strftime("%d/%m/%Y")
         return time_stamp
 
     def get_data_to_dict(self) -> dict:
+        """Build url, add time stamp to data and save to dictionary."""
+
         url = self.build_url()
         with urllib.request.urlopen(url) as url:
             data = json.loads(url.read())
@@ -79,18 +89,24 @@ class WeatherForecast:
         self.file_name = file_name
 
     def check_date(self, forecast) -> bool:
-        time_stamp = self.set_date()
+        """Check if today's date is the same as in a saved file."""
+
+        time_stamp: str = self.set_date()
         self.forecast = forecast
         if time_stamp == forecast["time_stamp"]:
             return True
         return False
 
     def set_date(self) -> str:
-        time_stamp = self.date.strftime("%d/%m/%Y")
+        """Return today's date."""
+
+        time_stamp: str = self.date.strftime("%d/%m/%Y")
         return time_stamp
 
     def show(self):
-        forecast = [
+        """Return a list of forecast positions."""
+
+        forecast: list = [
             ["Localization: ", self.forecast['location']["name"]],
             ["Country: ", self.forecast['location']["country"]],
             ["Today is: ", self.forecast["time_stamp"]],
@@ -104,5 +120,7 @@ class WeatherForecast:
         return forecast
 
     def write_forecast(self):
+        """Write forecast (dictionary) to JSON file."""
+
         with open(f"files/{self.file_name}.json", "r") as f:
             self.forecast = json.load(f)
