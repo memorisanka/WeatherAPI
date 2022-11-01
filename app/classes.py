@@ -106,17 +106,17 @@ class WeatherForecast:
     def show(self):
         """Return a list of forecast positions."""
 
-        forecast: list = [
-            ["Localization: ", self.forecast['location']["name"]],
-            ["Country: ", self.forecast['location']["country"]],
-            ["Today is: ", self.forecast["time_stamp"]],
-            ["Local time: ", self.forecast['location']["localtime"]],
-            ["Temperature [oC]: ", self.forecast['current']["temp_c"]],
-            ["Perceived temperature: ", self.forecast['current']["feelslike_c"]],
-            ["Wind speed [km/h]: ", self.forecast['current']["wind_kph"]],
-            ["Wind direction: ", self.forecast['current']["wind_dir"]],
-            ["Pressure [hPa]: ", self.forecast['current']["pressure_mb"]],
-        ]
+        forecast: dict = {
+            "localization" : self.forecast['location']["name"],
+            "country": self.forecast['location']["country"],
+            "created_at": self.forecast["time_stamp"],
+            "local_time": self.forecast['location']["localtime"],
+            "temperature": self.forecast['current']["temp_c"],
+            "per_temp": self.forecast['current']["feelslike_c"],
+            "wind_speed:": self.forecast['current']["wind_kph"],
+            "wind_direction": self.forecast['current']["wind_dir"],
+            "pressure:": self.forecast['current']["pressure_mb"],
+        }
         return forecast
 
     def write_forecast(self):

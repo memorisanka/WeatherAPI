@@ -31,6 +31,7 @@ def index():
                     forecast.write_forecast()
                     show_data: list = forecast.show()
                     return render_template("data.html", data=show_data)
+                return render_template("data.html")
         else:
             conn = ConnectionMixin(localization)
             connection = conn.connect_to_api()
@@ -41,5 +42,6 @@ def index():
                 forecast.write_forecast()
                 show_data: list = forecast.show()
                 return render_template("data.html", data=show_data)
+            return render_template("data.html", data=None)
 
     return render_template("entry.html", form=form)

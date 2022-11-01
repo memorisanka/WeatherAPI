@@ -6,28 +6,28 @@
             "lat": 51.1,
             "lon": 17.03,
             "tz_id": "Europe/Warsaw",
-            "localtime_epoch": 1667140606,
-            "localtime": "2022-10-30 15:36"
+            "localtime_epoch": 1667310508,
+            "localtime": "2022-11-01 14:48"
       },
       "current": {
-            "last_updated_epoch": 1667140200,
-            "last_updated": "2022-10-30 15:30",
-            "temp_c": 22.0,
+            "last_updated_epoch": 1667310300,
+            "last_updated": "2022-11-01 14:45",
+            "temp_c": 16.0,
             "is_day": 1,
             "condition": {
                   "text": "Sunny"
             },
-            "wind_kph": 6.8,
-            "wind_dir": "ESE",
-            "pressure_mb": 1019.0,
+            "wind_kph": 9.0,
+            "wind_dir": "W",
+            "pressure_mb": 1017.0,
             "precip_mm": 0.0,
             "precip_in": 0.0,
-            "humidity": 65,
+            "humidity": 68,
             "cloud": 0,
-            "feelslike_c": 24.5,
+            "feelslike_c": 16.0,
             "vis_km": 10.0,
-            "uv": 6.0,
-            "gust_mph": 2.9
+            "uv": 4.0,
+            "gust_mph": 10.3
       },
-      "time_stamp": "30/10/2022"
+      "time_stamp": "01/11/2022"
 }

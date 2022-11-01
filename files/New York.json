@@ -6,28 +6,28 @@
             "lat": 40.71,
             "lon": -74.01,
             "tz_id": "America/New_York",
-            "localtime_epoch": 1667138862,
-            "localtime": "2022-10-30 10:07"
+            "localtime_epoch": 1667311014,
+            "localtime": "2022-11-01 9:56"
       },
       "current": {
-            "last_updated_epoch": 1667138400,
-            "last_updated": "2022-10-30 10:00",
-            "temp_c": 5.0,
+            "last_updated_epoch": 1667310300,
+            "last_updated": "2022-11-01 09:45",
+            "temp_c": 15.0,
             "is_day": 1,
             "condition": {
-                  "text": "Sunny"
+                  "text": "Mist"
             },
-            "wind_kph": 3.6,
-            "wind_dir": "N",
-            "pressure_mb": 1026.0,
+            "wind_kph": 11.2,
+            "wind_dir": "SSW",
+            "pressure_mb": 1016.0,
             "precip_mm": 0.0,
             "precip_in": 0.0,
-            "humidity": 73,
-            "cloud": 0,
-            "feelslike_c": 4.7,
-            "vis_km": 16.0,
-            "uv": 3.0,
-            "gust_mph": 2.2
+            "humidity": 93,
+            "cloud": 100,
+            "feelslike_c": 15.2,
+            "vis_km": 3.2,
+            "uv": 4.0,
+            "gust_mph": 4.9
       },
-      "time_stamp": "30/10/2022"
+      "time_stamp": "01/11/2022"
 }
