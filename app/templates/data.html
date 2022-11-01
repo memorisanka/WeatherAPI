@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div>
+            <h3 class="text-white mb-4">
+                {% if not data %}
+                    There is no such place. Sorry...
+                {% else %}
+                    City: {{ data.localization }}<br>
+                    Country: {{ data.country }}<br>
+                    Today is: {{ data.created_at }}<br>
+                    Local time: {{ data.local_time }}<br>
+                    Temperature [C]: {{ data.temperature }}<br>
+                    Perceived temperature [C]: {{ data.per_temp }}<br>
+                    Wind speed [km/h]: {{ data.wind_speed }}<br>
+                    Wind direction: {{ data.wind_direction }}<br>
+                    Pressure: {{ data.pressure }}<br>
+                {% endif %}
+            </h3>
+</div>
+
+{% endblock %}

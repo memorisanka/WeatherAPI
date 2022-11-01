@@ -1,0 +1,33 @@
+{
+      "location": {
+            "name": "Berlin",
+            "region": "Berlin",
+            "country": "Germany",
+            "lat": 52.52,
+            "lon": 13.4,
+            "tz_id": "Europe/Berlin",
+            "localtime_epoch": 1667153268,
+            "localtime": "2022-10-30 19:07"
+      },
+      "current": {
+            "last_updated_epoch": 1667152800,
+            "last_updated": "2022-10-30 19:00",
+            "temp_c": 15.0,
+            "is_day": 0,
+            "condition": {
+                  "text": "Clear"
+            },
+            "wind_kph": 4.0,
+            "wind_dir": "SSE",
+            "pressure_mb": 1018.0,
+            "precip_mm": 0.0,
+            "precip_in": 0.0,
+            "humidity": 88,
+            "cloud": 0,
+            "feelslike_c": 15.8,
+            "vis_km": 10.0,
+            "uv": 1.0,
+            "gust_mph": 4.0
+      },
+      "time_stamp": "30/10/2022"
+}

@@ -1,0 +1,33 @@
+{
+      "location": {
+            "name": "Wroclaw",
+            "region": "",
+            "country": "Poland",
+            "lat": 51.1,
+            "lon": 17.03,
+            "tz_id": "Europe/Warsaw",
+            "localtime_epoch": 1667310508,
+            "localtime": "2022-11-01 14:48"
+      },
+      "current": {
+            "last_updated_epoch": 1667310300,
+            "last_updated": "2022-11-01 14:45",
+            "temp_c": 16.0,
+            "is_day": 1,
+            "condition": {
+                  "text": "Sunny"
+            },
+            "wind_kph": 9.0,
+            "wind_dir": "W",
+            "pressure_mb": 1017.0,
+            "precip_mm": 0.0,
+            "precip_in": 0.0,
+            "humidity": 68,
+            "cloud": 0,
+            "feelslike_c": 16.0,
+            "vis_km": 10.0,
+            "uv": 4.0,
+            "gust_mph": 10.3
+      },
+      "time_stamp": "01/11/2022"
+}

@@ -1,0 +1,33 @@
+{
+      "location": {
+            "name": "Gdynia",
+            "region": "",
+            "country": "Poland",
+            "lat": 54.5,
+            "lon": 18.55,
+            "tz_id": "Europe/Warsaw",
+            "localtime_epoch": 1667245298,
+            "localtime": "2022-10-31 20:41"
+      },
+      "current": {
+            "last_updated_epoch": 1667244600,
+            "last_updated": "2022-10-31 20:30",
+            "temp_c": 12.0,
+            "is_day": 0,
+            "condition": {
+                  "text": "Mist"
+            },
+            "wind_kph": 6.1,
+            "wind_dir": "WSW",
+            "pressure_mb": 1020.0,
+            "precip_mm": 0.0,
+            "precip_in": 0.0,
+            "humidity": 94,
+            "cloud": 100,
+            "feelslike_c": 11.2,
+            "vis_km": 4.0,
+            "uv": 1.0,
+            "gust_mph": 10.7
+      },
+      "time_stamp": "31/10/2022"
+}
