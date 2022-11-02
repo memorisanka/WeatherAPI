@@ -4,20 +4,20 @@ import unittest
 
 
 class TestAPI(unittest.TestCase):
-    url = f"http://api.weatherapi.com/v1/current.json?"
+    URL = f"http://api.weatherapi.com/v1/current.json?"
     api_key = "key=542f7d3a3b87476f8a7160752222110"
 
     def test_should_return_401(self):
         """Test should return 401, because of no authorization (no api_key)"""
 
-        resp = requests.get(self.url)
+        resp = requests.get(self.URL)
         self.assertEqual(resp.status_code, 401)
 
     def test_should_return_200(self):
-        """Test should return 200, because url is valid"""
+        """If url is valid, test should return 200"""
 
         localization = 'Berlin'
-        url = f"{self.url}{self.api_key}&q={localization}"
+        url = f"{self.URL}{self.api_key}&q={localization}"
         resp = requests.get(url)
         self.assertEqual(resp.status_code, 200)
 
@@ -36,4 +36,3 @@ class TestAPI(unittest.TestCase):
 
 if __name__ == '__main__':
     test = TestAPI()
-
