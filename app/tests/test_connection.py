@@ -1,11 +1,12 @@
 from app.classes import ConnectionMixin
 import requests
 import unittest
+from app.properties import API_KEY
 
 
 class TestAPI(unittest.TestCase):
     URL = f"http://api.weatherapi.com/v1/current.json?"
-    api_key = "key=542f7d3a3b87476f8a7160752222110"
+    api_key = API_KEY
 
     def test_should_return_401(self):
         """Test should return 401, because of no authorization (no api_key)"""

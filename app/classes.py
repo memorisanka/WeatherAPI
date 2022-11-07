@@ -4,6 +4,7 @@ import requests
 import os
 import urllib.request
 from http import HTTPStatus
+from app.properties import API_KEY
 
 
 class FileMixin:
@@ -45,7 +46,7 @@ class ConnectionMixin:
     def __init__(self, localization) -> None:
         self.localization = localization
         self.url = f"http://api.weatherapi.com/v1/current.json?"
-        self.api_key = "key=542f7d3a3b87476f8a7160752222110"
+        self.api_key = API_KEY
 
     def build_url(self) -> str:
         """Build url after delete white space between words."""
